@@ -1,5 +1,5 @@
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../html/header";
+import Footer from "../html/footer";
 
 export default function Settings() {
   return (
