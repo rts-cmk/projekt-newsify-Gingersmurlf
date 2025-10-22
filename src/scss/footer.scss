@@ -1,18 +1,31 @@
 @use "./variables.scss" as *;
 
-.footer{
-
-
-    a {
-        color: $notActive;
-        path {
-            stroke: $notActive;
-        }
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 -8px 16px rgba(97, 97, 97, 0.2);
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  a {
+    color: $notActive;
+    path {
+      stroke: $notActive;
     }
-    a.active {
-        color: $active;
-        path{
-            stroke: $active;
-        }
+  }
+  a.active {
+    color: $active;
+    path {
+      stroke: $active;
     }
+  }
 }
