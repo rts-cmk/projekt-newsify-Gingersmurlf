@@ -48,7 +48,7 @@ export default function Footer() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/favourite">
+            <NavLink to="/popular">
               <svg
                 width="24"
                 height="24"
@@ -65,7 +65,7 @@ export default function Footer() {
                 />
               </svg>
               <br />
-              Favourites
+              Popular
             </NavLink>
           </li>
           <li>

@@ -9,10 +9,25 @@
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figcaption {
+    font-family: "Playfair Display", serif;
+}
+
+p {
+    font-family: "Open sans", sans-serif;
+}
+
 a {
     text-decoration: none;
 }
 
-.wrapper {
-    min-height: 250vh;
+.filler {
+    min-height: 10rem;
+    z-index: -1;
 }

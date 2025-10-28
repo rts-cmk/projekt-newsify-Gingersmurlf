@@ -15,6 +15,9 @@
       height: 26px;
     }
   }
+  .news__caption {
+    text-transform: capitalize;
+  }
   .news__content {
     li {
       border-bottom: 1px solid #c5c5c5;
@@ -40,4 +43,19 @@
       }
     }
   }
+}
+
+.news__arrow {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(-90deg);
+}
+
+.active {
+  transform: rotate(0);
+}
+
+.active__header {
+  position: sticky;
+  top: 0;
+  background: white;
 }

@@ -1,25 +1,27 @@
-import Header from "./components/html/header";
-import Footer from "./components/html/footer";
+import Header from "../html/header";
+import Footer from "../html/footer";
 
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ChevronDown } from "lucide-react";
 
-const categories = ["europe", "health", "sport", "travel", "business"];
+const time_interval = [1, 7, 30];
 const apiKey = import.meta.env.VITE_API_KEY;
 
-export default function App() {
-  const [type, setType] = useState(null);
+export default function Popular() {
+  const [period, setPeriod] = useState(0);
 
-  const { isLoading, isPending, error, data } = useQuery({
-    queryKey: ["home_articles", type],
+  const { isLoading, isPending, error, data} = useQuery({
+    queryKey: ["popular_articles", period],
     queryFn: async () => {
+      if(period === 0) return {};
       const response = await fetch(
-        `/nyt/svc/search/v2/articlesearch.json?q=${type}&api-key=${apiKey}`
+        `/nyt/svc/mostpopular/v2/viewed/${period}.json?api-key=${apiKey}`
       );
       const result = await response.json();
-      return result.response.docs;
+      return result.results;
     },
+    enabled: true,
   });
 
   if (isPending || isLoading) return <p>Loading...</p>;
@@ -30,14 +32,16 @@ export default function App() {
       <Header isShowing />
       <main>
         <ul className="category__container">
-          {categories.map((category) => {
+          {time_interval.map((category) => {
             return (
               <li className="news" key={category}>
                 <div
                   className={`news__top ${
-                    type === category ? "active__header" : ""
+                    period === category ? "active__header" : ""
                   }`}
-                  onClick={() => setType(type === category ? null : category)}
+                  onClick={() =>
+                    setPeriod(period === category ? 0 : category)
+                  }
                 >
                   <figure>
                     <img
@@ -50,20 +54,23 @@ export default function App() {
                   </figure>
                   <ChevronDown
                     className={`news__arrow ${
-                      type === category ? "active" : ""
+                      period === category ? "active" : ""
                     }`}
                   />
                 </div>
                 <ul className="news__content">
-                  {type === category &&
+                  {period === category &&
                     data.map((article) => (
-                      <li key={article._id}>
+                      <li key={article.id}>
                         <figure>
-                          <img src={article.multimedia.thumbnail.url} alt="" />
+                          <img
+                            src={article.media?.[0]?.["media-metadata"][0].url}
+                            alt=""
+                          />
                           <figcaption>
-                            <h3>{article.headline.main}</h3>
-                            <p>{article.snippet}</p>
-                            <a target="_blank" href={article.web_url}>
+                            <h3>{article.title}</h3>
+                            <p>{article.abstract}</p>
+                            <a target="_blank" href={article.url}>
                               See more
                             </a>
                           </figcaption>
