@@ -40,7 +40,7 @@ export default function Splash() {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1, transition: { duration: 3 } }}
-        onAnimationComplete={() => navigate(isFirstVisit ? "/onboarding1" : "/home")}
+        onAnimationComplete={() => navigate(isFirstVisit ? "/onboarding1" : "/login")}
       ></motion.div>
     </motion.div>
   );
