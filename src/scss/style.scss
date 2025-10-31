@@ -4,9 +4,9 @@
 @use "motion";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1,
@@ -16,18 +16,58 @@ h4,
 h5,
 h6,
 figcaption {
-    font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 }
 
 p {
-    font-family: "Open sans", sans-serif;
+  font-family: "Open sans", sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .filler {
-    min-height: 10rem;
-    z-index: -1;
+  min-height: 10rem;
+  z-index: -1;
+}
+
+.error,
+.loading {
+  font-size: 50px;
+  align-self: center;
+}
+
+.save__delete__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 180px;
+  width: 104px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  .save__delete {
+    width: 24px;
+    height: 24px;
+  }
+  .saved {
+    fill: white;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.white {
+  fill: white;
+}
+
+button {
+  border: none;
 }

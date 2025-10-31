@@ -19,13 +19,17 @@
     text-transform: capitalize;
   }
   .news__content {
+    list-style: none;
     li {
-      border-bottom: 1px solid #c5c5c5;
+      position: relative;
       height: 180px;
       figure {
         height: 180px;
         align-items: center;
-        padding: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background: white;
+        border-bottom: 1px solid #c5c5c5;
         img {
           width: 72px;
           height: 72px;
@@ -58,4 +62,5 @@
   position: sticky;
   top: 0;
   background: white;
+  z-index: 50;
 }

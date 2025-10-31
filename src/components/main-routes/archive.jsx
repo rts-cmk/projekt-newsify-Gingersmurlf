@@ -5,6 +5,11 @@ export default function Archive() {
   return (
     <div className="wrapper">
       <Header isShowing />
+
+      {Object.entries(localStorage).map(([key, value]) => {
+        const article = JSON.parse(value);
+        console.log(article);
+      })}
       <Footer />
     </div>
   );

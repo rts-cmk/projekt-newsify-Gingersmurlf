@@ -11,10 +11,10 @@ const apiKey = import.meta.env.VITE_API_KEY;
 export default function Popular() {
   const [period, setPeriod] = useState(0);
 
-  const { isLoading, isPending, error, data} = useQuery({
+  const { isLoading, isPending, error, data } = useQuery({
     queryKey: ["popular_articles", period],
     queryFn: async () => {
-      if(period === 0) return {};
+      if (period === 0) return {};
       const response = await fetch(
         `/nyt/svc/mostpopular/v2/viewed/${period}.json?api-key=${apiKey}`
       );
@@ -29,7 +29,7 @@ export default function Popular() {
 
   return (
     <div className="wrapper">
-      <Header isShowing />
+      <Header />
       <main>
         <ul className="category__container">
           {time_interval.map((category) => {
@@ -39,9 +39,7 @@ export default function Popular() {
                   className={`news__top ${
                     period === category ? "active__header" : ""
                   }`}
-                  onClick={() =>
-                    setPeriod(period === category ? 0 : category)
-                  }
+                  onClick={() => setPeriod(period === category ? 0 : category)}
                 >
                   <figure>
                     <img
@@ -49,7 +47,7 @@ export default function Popular() {
                       alt=""
                     />
                     <figcaption className="news__caption">
-                      {category}
+                      Most popular past {category} days
                     </figcaption>
                   </figure>
                   <ChevronDown
