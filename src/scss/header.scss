@@ -1,0 +1,42 @@
+.header {
+    border-bottom: 1px #C5C5C5 solid;
+    padding-bottom: 1rem;
+}
+
+.credit {
+    min-width: 150px;
+}
+
+.header__figure {
+    display: flex;
+    max-width: 25rem;
+    margin: 35px auto 15px auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    img {
+        height: 27px;
+        width: 19px;
+    }
+    h1 {
+        font-size: 24px;
+        color: #404040;
+    }
+}
+
+.header__nav {
+    justify-content: center;
+    display: flex;
+}
+
+.header__search {
+    border: none;
+    background: #d9d9d9;
+    height: 3.0625rem;
+    width: 21.5625rem;
+    opacity: 0.3;
+    font-size: 1.2rem;
+    padding: 10px;
+    outline: none;
+}

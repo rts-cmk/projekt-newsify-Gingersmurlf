@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/nyt/(.*)", "destination": "https://api.nytimes.com/$1" },
+    { "source": "/(.*)", "destination": "/index.html"}
+  ]
+}
