@@ -3,6 +3,7 @@ export default function Header({ isShowing = false }) {
     <>
       <header className="header">
         <figure className="header__figure">
+          <img className="credit" src="../poweredby_nytimes_200c.png" alt="" />
           <img src="../projekt-ui/screens/newsify_logo_1.svg" alt="logo" />
           <h1>Newsify</h1>
         </figure>
