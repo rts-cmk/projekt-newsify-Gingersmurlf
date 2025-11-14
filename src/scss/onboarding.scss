@@ -1,0 +1,87 @@
+@use "./variables.scss" as *;
+
+.intro {
+  padding: 15px;
+}
+.intro__img {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100%;
+    max-width: 400px;
+  }
+  h2 {
+    margin-top: 10px;
+  }
+}
+
+.intro__text {
+  text-align: center;
+  color: rgb(90, 90, 90);
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 18px;
+    font-family: sans-serif;
+  }
+}
+/**/
+.intro__buttons {
+  list-style: none;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  li {
+    border-radius: 25px;
+    background-color: rgb(185, 185, 185);
+    max-width: 150px;
+    width: 100%;
+  }
+  button {
+    width: 100%;
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 12px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+  }
+  .skip__button {
+    border: 2px solid $active;
+    background-color: white;
+    color: $active;
+  }
+  .continue__button {
+    border: 2px solid $active;
+    background-color: $active;
+    color: white;
+  }
+}
+
+// dots
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c5c5c5;
+}
+
+.dot.active {
+  background: $active;
+  width: 40px;
+  border-radius: 10px; 
+}
